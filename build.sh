@@ -1,11 +1,11 @@
-mkdir -p ~/docker/isaac-sim/cache/kit
-mkdir -p ~/docker/isaac-sim/cache/ov
-mkdir -p ~/docker/isaac-sim/cache/pip
-mkdir -p ~/docker/isaac-sim/cache/glcache
-mkdir -p ~/docker/isaac-sim/cache/computecache
-mkdir -p ~/docker/isaac-sim/logs
-mkdir -p ~/docker/isaac-sim/data
-mkdir -p ~/docker/isaac-sim/documents
-mkdir -p ~/docker/isaac-sim/pkg
+docker pull nvcr.io/nvidia/isaac-sim:5.1.0
 
-docker build -t nis_ros2:4.5.0-Humble .
+mkdir -p ~/docker/isaac-sim/cache/main/ov
+mkdir -p ~/docker/isaac-sim/cache/main/warp
+mkdir -p ~/docker/isaac-sim/cache/computecache
+mkdir -p ~/docker/isaac-sim/config
+mkdir -p ~/docker/isaac-sim/data/documents
+mkdir -p ~/docker/isaac-sim/data/Kit
+mkdir -p ~/docker/isaac-sim/logs
+mkdir -p ~/docker/isaac-sim/pkg
+sudo chown -R 1234:1234 ~/docker/isaac-sim

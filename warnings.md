@@ -1,5 +1,10 @@
 # Warnings - Introducción
-La mayoría de warnings son deprecaciones. Otros son por no haber configurado un servidor de Nucleus (OmniHub) y otro porque no encuentra las condifuraciones específicas, por lo que aplica las de por defecto.
+
+Salen carpetas y directorios de omniverse con un candado rojo porque no los encuentra... 
+- 2025-12-04T09:46:07Z [188,975ms] [Warning] [omni.kit.window.filepicker.model] Failed to find item at 'https://omniverse-content-production.s3-us-west-2.amazonaws.com/'
+
+
+<!-- La mayoría de warnings son deprecaciones. Otros son por no haber configurado un servidor de Nucleus (OmniHub) y otro porque no encuentra las condifuraciones específicas, por lo que aplica las de por defecto.
 
 No hay errores en la ejecución. Habrá que revisar si funciona OK al trabajar con el programa.
 
@@ -543,5 +548,5 @@ Solucionado al añadir en el run.sh:
 2025-12-03 16:09:35 [990,922ms] [Warning] [omni.kit.window.extensions.markdown_renderer] Hyperlink error: omni.hydra.engine.stats/omni.hydra.engine.stats.get_device_info not found
 2025-12-03 16:09:35 [990,922ms] [Warning] [omni.kit.window.extensions.markdown_renderer] Hyperlink error: omni.hydra.engine.stats/omni.hydra.engine.stats.get_mem_stats not found
 
-
+-->
 

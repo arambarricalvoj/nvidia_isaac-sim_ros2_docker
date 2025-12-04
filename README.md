@@ -1,6 +1,40 @@
 
-# nvidia_isaac-sim_4.5.0_ros2_docker
-**Isaac Sim runs with warnings (``check warning.md``, for instance, to add a RTX Lidar you may need to add some configuration files. At the moment, this issue has not been resolved, and the .md file is only available in Spanish)**
+# nvidia_isaac-sim_5.1.0_ros2_docker
+
+under development...
+
+<!-- 
+    Check if your system is compatible with Isaac Sim:
+
+./isaac-sim.compatibility_check.sh --/app/quitAfter=10 --no-window
+
+./isaac-sim.compatibility_check.sh
+
+-->
+
+
+<!--Start Isaac Sim with native livestream mode:
+
+./runheadless.sh -v 
+
+Start Isaac Sim with GUI:
+
+./runapp.sh-->
+
+
+<!-- 
+esta imagen trae ros2 bridge? https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/install_container.html
+
+Respuesta breve: Sí, la imagen oficial de Isaac Sim en contenedor incluye soporte para el ROS2 bridge, pero no se activa automáticamente: debes lanzar los paquetes o extensiones correspondientes dentro del contenedor
+-->
+
+
+
+--
+
+
+
+<!--**Isaac Sim runs with warnings (``check warning.md``, for instance, to add a RTX Lidar you may need to add some configuration files. At the moment, this issue has not been resolved, and the .md file is only available in Spanish)**
 
 Run NVIDIA Isaac Sim (NIS) 4.5.0 in a Docker container with ROS2 Humble and ROS2 bridge already set up.
 Please, first af all check NIS_4-5-0 requiremente here: https://docs.isaacsim.omniverse.nvidia.com/4.5.0/installation/requirements.html. 
@@ -218,3 +252,5 @@ https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/Doc
 https://catalog.ngc.nvidia.com/orgs/nvidia/containers/isaac-sim
 
 https://github.com/NVIDIA-Omniverse/IsaacSim-dockerfiles
+
+-->
