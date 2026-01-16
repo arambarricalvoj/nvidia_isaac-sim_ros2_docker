@@ -11,7 +11,10 @@ Please, first af all check NIS_4-5-0 requiremente here: https://docs.isaacsim.om
 
 In this case, the Isaac Sim Docker image is the official one provided by NVIDIA, so no Dockerfile is included. However, the ROS2 image, although based on the official OSRF Docker image, requires additional configuration (the inclusion of a fastdds.xml profile) to enable communication with Isaac Sim. For this reason, a custom Dockerfile is provided for the ROS 2 container.
 
-In the future, a link to my Docker Hub will also be published as a backup for both images, you never know what third parties might do with their repositories ;)
+A link to my Docker Hub is provided as a backup for both images, you never know what third parties might do with their repositories ;) [https://hub.docker.com/r/arambarricalvoj/nis_ros2](https://hub.docker.com/r/arambarricalvoj/nis_ros2):
+- (soon available) Official NIS 4.5.0 image in my Docker Hub: ``docker pull arambarricalvoj/nis_ros2:nis-4.5.0``
+- (soon available) Official ROS2 Jazzy image in my Docker Hub: ``docker pull arambarricalvoj/nis_ros2:ros-jazzy-desktop-full``
+- Adapted ROS2 Jazzy image in my Docker Hub: ``docker pull arambarricalvoj/nis_ros2:ros-jazzy-desktop-full-nis`` 
 
 If you meet all the requirements, you can jump directly to [Download and run with bash scripts](#download-and-run-with-bash-scripts) to start developing!
 
@@ -250,7 +253,7 @@ Build or download ROS2 Docker image adapted to NIS:
   
   - Download:
     ```bash
-    ./docker pull arambarricalvoj/ros:humble-desktop-full_nis:latest
+    docker pull arambarricalvoj/nis_ros2:ros-jazzy-desktop-full-nis
     ```
 
 Run ROS2:
