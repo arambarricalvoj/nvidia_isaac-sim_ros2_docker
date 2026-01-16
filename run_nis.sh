@@ -22,4 +22,5 @@ docker run --name nis-4.5.0-bare \
            -v ~/docker/isaac-sim/logs:/root/.nvidia-omniverse/logs:rw \
            -v ~/docker/isaac-sim/data:/root/.local/share/ov/data:rw \
            -v ~/docker/isaac-sim/documents:/root/Documents:rw \
+           -v ./projects:/isaac-sim/projects:rw \
            nvcr.io/nvidia/isaac-sim:4.5.0

@@ -11,4 +11,4 @@ docker run -e DISPLAY=$DISPLAY \
            --network=host \
            --gpus all \
            --name ros2_jazzy \
-           osrf/ros:jazzy-desktop-full
+           ros:jazzy-desktop-full_nis
