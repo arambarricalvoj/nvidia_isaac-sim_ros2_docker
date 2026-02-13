@@ -255,6 +255,19 @@ systemctl --user status gnome-remote-desktop.service
 
 Debe aparecer como active (running).
 
+### El bloqueo de pantalla tiene que estar desactivado. En caso de estar activado y la sesión bloqueada, seguir los siguientes pasos desde terminal:
+Comprobarlo con:
+```bash
+loginctl show-session 1 -p LockedHint
+```
+Si la respuesta es ``LockedHint=yes``, la sesión está bloqueada. Para desbloquearla:
+```bash
+loginctl unlock-session 1
+```
+
+Ahora ya puedes conectar por RDP y desactivar el bloqueo de pantalla en la sección de seguridad de ajustes, a través de la GUI.
+
+
 ## 8. Abrir puertos en el firewall (UFW)
 ```bash
 sudo ufw allow 3389/tcp
