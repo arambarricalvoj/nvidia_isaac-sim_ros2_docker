@@ -1,20 +1,43 @@
 
-# nvidia_isaac-lab_2.3.2_ros2_docker (DISTRIBUTED)
+# nvidia_isaac-lab_3.0.0-EA_ros2_docker (DISTRIBUTED)
+Under development! https://github.com/isaac-sim/IsaacLab/issues/7732
 
 # Isaac Lab version
-``2.3.2``
+``3.0.0-EA``
 <br>
 
 # Isaac Sim version
-``5.1.0``
+``6.1.0``
 <br>
 
 <!-- # ROS2 version
 ``ROS2 Jazzy Desktop``
 <br> -->
 
+# Official instructions
+```bash
+git clone git@github.com:isaac-sim/IsaacLab.git --branch v3.0.0-EA
+cd IsaacLab
+```
+
+Build Docker image: 
+```bash
+./docker/container.py start
+```
+
+Run Docker imager:
+```bash
+./docker/container.py enter base
+```
+
+Run Isaac Sim inside Docker container:
+```bash
+./_isaac_sim/runapp.sh
+```
+
+<!--
 # Installation and execution
-Follow the instructions in the “nis-5.1.0-distributed” branch.
+<!--Follow the instructions in the “nis-6.1.0-distributed” branch.
 Then, follow these steps:
 
 
@@ -61,6 +84,11 @@ cat /workspace/isaaclab/logs/docker_tutorial/log.txt
 <br>
 
 # Bibliography 
+https://isaac-sim.github.io/IsaacLab/v3.0.0-EA/source/setup/installation/index.html#installation-method-container
+
+
+
+# Outdated bibliography
 https://isaac-sim.github.io/IsaacLab/main/source/deployment/docker.html
 
 https://catalog.ngc.nvidia.com/orgs/nvidia/containers/isaac-lab?version=2.3.2
@@ -69,11 +97,4 @@ https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/index.html
 
 https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/install_ros.html
 
-# Outdated bibliography
-https://docs.omniverse.nvidia.com/isaacsim/latest/installation/install_container.html
-
-https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/Documentation/Isaac-Sim-Docs_2022.2.1/isaacsim/latest/install_ros.html
-
-https://catalog.ngc.nvidia.com/orgs/nvidia/containers/isaac-sim
-
-https://github.com/NVIDIA-Omniverse/IsaacSim-dockerfiles
+-->
