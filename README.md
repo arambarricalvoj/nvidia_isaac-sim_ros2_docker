@@ -1,5 +1,6 @@
 
-# nvidia_isaac-sim_5.1.0_ros2_docker (DISTRIBUTED)
+# nvidia_isaac-sim_6.1.0_ros2_docker (DISTRIBUTED)
+# *Under development!*
 
 <!-- Arrancar
 ./runapp.sh --enable omni.isaac.ros2_bridge -->
@@ -7,46 +8,46 @@
 **Isaac Sim runs with warnings (``check warning.md``, for instance, to add a RTX Lidar you may need to add some configuration files. At the moment, this issue has not been resolved, and the .md file is only available in Spanish)**
 
 
-Run NVIDIA Isaac Sim (NIS) 5.1.0 in a Docker container with ROS2 bridge already set up and communicating with another Docker container running the ROS2 Humble application.
-Please, first af all check NIS_5-1-0 requiremente here: https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/requirements.html. 
+Run NVIDIA Isaac Sim (NIS) 6.1.0 in a Docker container with ROS2 bridge already set up and communicating with another Docker container running the ROS2 Humble application.
+Please, first af all check NIS_6-1-0 requiremente here: https://docs.isaacsim.omniverse.nvidia.com/6.1.0/installation/requirements.html. 
 
 In this case, the Isaac Sim Docker image is the official one provided by NVIDIA, so no Dockerfile is included. However, the ROS2 image, although based on the official OSRF Docker image, requires additional configuration (the inclusion of a fastdds.xml profile) to enable communication with Isaac Sim. For this reason, a custom Dockerfile is provided for the ROS 2 container.
 
 A link to my Docker Hub is provided as a backup for both images, you never know what third parties might do with their repositories ;) [https://hub.docker.com/r/arambarricalvoj/nis_ros2](https://hub.docker.com/r/arambarricalvoj/nis_ros2):
-- (soon available) Official NIS 5.1.0 image in my Docker Hub: ``docker pull arambarricalvoj/nis_ros2:nis-5.1.0``
+- (soon available) Official NIS 6.1.0 image in my Docker Hub: ``docker pull arambarricalvoj/nis_ros2:nis-6.1.0``
 - (soon available) Official ROS2 Jazzy image in my Docker Hub: ``docker pull arambarricalvoj/nis_ros2:ros-jazzy-desktop-full``
 - Adapted ROS2 Jazzy image in my Docker Hub: ``docker pull arambarricalvoj/nis_ros2:ros-jazzy-desktop-full-nis`` 
 
 
 If you meet all the requirements, you can jump directly to [Download and run with bash scripts](#download-and-run-with-bash-scripts) to start developing!
 
-NOTE: NIS 5.1.0 officially works with ROS2 Jazzy.
+NOTE: NIS 6.1.0 officially works with ROS2 Jazzy.
 <br>
 
 # Specifications
 This repository has been run with the following host specifications:
 
 OS: ``Ubuntu 24.04.X LTS``<br>
-RAM: ``32 GB``<br>
-Processor: ``13th Gen Intel® Core™ i7-13650HX × 20``<br>
+RAM: ``64 GB``<br>
+Processor: ``Intel® Core™ i9-10900X × 20``<br>
 Graphics card: ``NVIDIA Quadro RTX 5000``<br>
 Graphics card memory: ``16 GB``<br>
-NVIDIA-SMI dirvers version: ``580.95.05``<br>
-CUDA version: ``13.0``<br>
-Needed disk space: ``30 GB`` (rounded up)<br>
+NVIDIA-SMI dirvers version: ``595.91.07``<br>
+CUDA version: ``13.2``<br>
+Needed disk space: ``33 GB`` (rounded up)<br>
 
 *It should work in previous releases as 20.04 and 22.04.
 <br>
 
 # Prerequisites
 - NVIDIA Drivers installation: https://ubuntu.com/server/docs/nvidia-drivers-installation<br>
-GPU drivers version must be 580.65.06 or later, check it with:
+GPU drivers version must be 595.58.03 or later, check it with:
 ```bash
 nvidia-smi
 ```
 
-- NVIDIA Isaac Sim Requirements: https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/requirements.html
-Please ensure you meet the minimum requirements for NIS 5.1.0 before proceeding.
+- NVIDIA Isaac Sim Requirements: https://docs.isaacsim.omniverse.nvidia.com/6.1.0/installation/requirements.html
+Please ensure you meet the minimum requirements for NIS 6.1.0 before proceeding.
 
 - Docker installation and executing without sudo:
 ```bash
@@ -126,7 +127,7 @@ sudo prime-select on-demand
 <br>
 
 # Isaac Sim version
-``5.1.0``
+``6.1.0``
 <br>
 
 # ROS2 version
@@ -166,7 +167,7 @@ sudo prime-select on-demand
 # Download images
 ```bash
 docker pull osrf/ros:humble-desktop-full
-docker pull nvcr.io/nvidia/isaac-sim:5.1.0
+docker pull nvcr.io/nvidia/isaac-sim:6.1.0
 ```
 <br>
 
@@ -178,7 +179,7 @@ xhost +local:docker
 Run the NIS container with the needed configuration:
 ```bash
 xhost +local:docker
-docker run --name nis-5.1.0-bare \
+docker run --name nis-6.1.0-bare \
            --entrypoint bash \
            -it \
            --runtime=nvidia \
@@ -200,7 +201,7 @@ docker run --name nis-5.1.0-bare \
            -v ~/docker/isaac-sim/pkg:/isaac-sim/.local/share/ov/pkg:rw \
            -v ./projects:/isaac-sim/projects:rw \
            -u 1234:1234 \
-           nvcr.io/nvidia/isaac-sim:5.1.0
+           nvcr.io/nvidia/isaac-sim:6.1.0
 ```
 The volume ```/isaac-sim/projects:rw``` is intended to be the working directory for NIS projects, the path where projects should be saved.
 
@@ -394,7 +395,7 @@ To do this:
 <br>
 
 # Check ROS2 Bridge along both containers
-NOTE: For simplicity, since the graphical user interface of NIS 4.5.0 is identical to that of NIS 5.1.0, the screenshots are from the previous version. 
+NOTE: For simplicity, since the graphical user interface of NIS 4.5.0 is identical to that of NIS 6.1.0, the screenshots are from the previous version. 
 
 On NIS, ``Create > ROS2 Assets > Nova Carter`` and click ``Play``:
 ![Create Nova Carter on NIS](img/nova_carter.png)
@@ -413,9 +414,9 @@ You will see the topics used by NIS. If you stop the simulation or exit the NIS 
 <br>
 
 # Bibliography 
-https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/index.html
+https://docs.isaacsim.omniverse.nvidia.com/6.1.0/installation/index.html
 
-https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/install_ros.html
+https://docs.isaacsim.omniverse.nvidia.com/6.1.0/installation/install_ros.html
 
 # Outdated bibliography
 https://docs.omniverse.nvidia.com/isaacsim/latest/installation/install_container.html

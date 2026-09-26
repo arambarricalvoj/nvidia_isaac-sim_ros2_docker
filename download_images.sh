@@ -1,4 +1,4 @@
-docker pull nvcr.io/nvidia/isaac-sim:5.1.0
+docker pull nvcr.io/nvidia/isaac-sim:6.1.0
 
 # Not needed as Dockerfile provided with NVIDIA's fastdds.xml
 # docker pull osrf/ros:jazzy-desktop-full

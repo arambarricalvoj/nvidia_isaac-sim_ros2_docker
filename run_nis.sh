@@ -1,5 +1,5 @@
 xhost +local:docker
-docker run --name nis-5.1.0-bare \
+docker run --name nis-6.1.0-bare \
            --entrypoint bash \
            -it \
            --runtime=nvidia \
@@ -21,4 +21,4 @@ docker run --name nis-5.1.0-bare \
            -v ~/docker/isaac-sim/pkg:/isaac-sim/.local/share/ov/pkg:rw \
            -v ./projects:/isaac-sim/projects:rw \
            -u 1234:1234 \
-           nvcr.io/nvidia/isaac-sim:5.1.0
+           nvcr.io/nvidia/isaac-sim:6.1.0
